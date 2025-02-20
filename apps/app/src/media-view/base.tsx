@@ -40,7 +40,7 @@ export function titleFromUrl(src: string): string {
   if (!url) return "";
   const { basename, extension } = toFileInfo(url.pathname);
   if (!extension) return "";
-  return decodeURI(basename);
+  return decodeURI(basename + '.' + extension);
 }
 
 export function addAction(player: PlayerComponent & ItemView) {
