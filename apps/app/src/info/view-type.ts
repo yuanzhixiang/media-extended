@@ -111,6 +111,14 @@ export class URLViewType extends Component {
       case MediaHost.Bilibili:
       case MediaHost.Coursera:
         return [MEDIA_WEBPAGE_VIEW_TYPE];
+      case MediaHost.Jsdelivr:
+        const ext = url.pathname.split('.').pop()?.toLowerCase();
+        if (['mp3', 'wav', 'ogg', 'm4a'].includes(ext || '')) {
+          return [MEDIA_URL_VIEW_TYPE.audio];
+        } else if (['mp4', 'webm', 'ogv'].includes(ext || '')) {
+          return [MEDIA_URL_VIEW_TYPE.video];
+        }
+        return [MEDIA_WEBPAGE_VIEW_TYPE];
       default:
         assertNever(url.type);
     }

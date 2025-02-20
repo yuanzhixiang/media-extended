@@ -12,7 +12,7 @@ import { courseraDetecter, courseraResolver } from "./coursera";
 import { genericResolver } from "./generic";
 import { vimeoDetecter, vimeoResolver } from "./vimeo";
 import { youtubeDetecter, youtubeResolver } from "./youtube";
-
+import { jsdelivrDetecter, jsdelivrResolver } from "./jsdelivr";
 export function resolveUrlMatcher(url: MediaURL) {
   const type =
     detecters.reduce<MediaHost | null>(
@@ -30,6 +30,7 @@ const detecters = [
   youtubeDetecter,
   vimeoDetecter,
   courseraDetecter,
+  jsdelivrDetecter,
 ];
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const Resolver: Record<MediaHost, URLResolver> = {
@@ -38,6 +39,7 @@ const Resolver: Record<MediaHost, URLResolver> = {
   [MediaHost.Vimeo]: vimeoResolver,
   [MediaHost.Coursera]: courseraResolver,
   [MediaHost.Generic]: genericResolver,
+  [MediaHost.Jsdelivr]: jsdelivrResolver,
 };
 
 export function resolveUrl(url: MediaURL): URLResolveResult {

@@ -8,6 +8,7 @@ export const enum MediaHost {
   Vimeo = "vimeo",
   Coursera = "coursera",
   Generic = "generic",
+  Jsdelivr = "jsdelivr",
 }
 
 export type SupportedMediaHost = Exclude<MediaHost, MediaHost.Generic>;
@@ -17,6 +18,7 @@ export const mediaHostUrl: Record<SupportedMediaHost, string> = {
   [MediaHost.YouTube]: "https://www.youtube.com",
   [MediaHost.Vimeo]: "https://www.vimeo.com",
   [MediaHost.Coursera]: "https://www.coursera.org",
+  [MediaHost.Jsdelivr]: "https://cdn.jsdelivr.net",
 };
 
 export const mediaHostDisplayName: Record<MediaHost, string> = {
@@ -25,6 +27,7 @@ export const mediaHostDisplayName: Record<MediaHost, string> = {
   [MediaHost.Generic]: "Website",
   [MediaHost.Vimeo]: "Vimeo",
   [MediaHost.Coursera]: "Coursera",
+  [MediaHost.Jsdelivr]: "Jsdelivr",
 };
 
 export const noGeneric = (labels: Record<MediaHost, string>) =>
