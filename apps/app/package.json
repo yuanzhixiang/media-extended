@@ -8,7 +8,7 @@
     "lint": "eslint src/ --ext .ts,.tsx --fix"
   },
   "devDependencies": {
-    "@codemirror/language": "../../packages/cm-language",
+    "@codemirror/language": "github:lishid/cm-language#2644bfc27afda707a7e1f3aedaf3ca7120f63cd9",
     "@codemirror/state": "^6.0.0",
     "@codemirror/view": "^6.0.0",
     "@electron/remote": "^2.1.1",
@@ -30,6 +30,7 @@
     "globby": "^14.0.1",
     "jszip": "^3.10.1",
     "less": "^4.2.0",
+    "media-captions": "1.0.4",
     "obsidian": "1.5.7-1",
     "postcss": "^8.4.32",
     "postcss-discard": "^2.0.0",
